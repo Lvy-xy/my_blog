@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="mb-4">上传 Markdown 或图片文件</h1>
+  <form action="" method="post" enctype="multipart/form-data" class="card p-4 shadow-sm">
+    <div class="mb-3">
+      <label for="file" class="form-label">选择文件</label>
+      <input class="form-control" type="file" id="file" name="file" required>
+      <div class="form-text">支持 Markdown(.md, .markdown) 和常见图片格式(.png, .jpg, .jpeg, .gif, .svg)。</div>
+    </div>
+    <button class="btn btn-primary" type="submit">上传</button>
+    <a class="btn btn-link" href="{{ url_for('index') }}">返回列表</a>
+  </form>
+{% endblock %}

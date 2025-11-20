@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="d-flex align-items-center mb-3">
+    <h1 class="me-3">Markdown 列表</h1>
+    <a class="btn btn-primary" href="{{ url_for('upload') }}">上传新文件</a>
+  </div>
+  {% if markdown_files %}
+    <div class="list-group">
+      {% for file in markdown_files %}
+        <a class="list-group-item list-group-item-action" href="{{ url_for('view_markdown', filename=file) }}">{{ file }}</a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-muted">还没有上传任何 Markdown 文件。</p>
+  {% endif %}
+{% endblock %}
